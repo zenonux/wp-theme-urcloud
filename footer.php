@@ -40,6 +40,14 @@
                 <?php }
                 if (!get_theme_mod('biji_setting_prettify')) { ?>
                     Prism.highlightAll();
+                    $("pre[class*='language-']").each(function(index, item) {
+                        let text = $(item).find("code[class*='language-']").text();
+                        let span = $(`<span class="copy"><i class="fa fa-clone"></i></span>`);
+                        new ClipboardJS(span[0], {
+                            text: () => text
+                        }).on('success', () => Qmsg.success('复制成功！'));
+                        $(item).append(span);
+                    });
                 <?php } ?>
 
                 $('ul.links li a').each(function() {
@@ -74,7 +82,17 @@
                 // support MathJax
                 if (typeof MathJax !== 'undefined') MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
                 // support Prism code prettify
-                if (typeof Prism !== 'undefined') Prism.highlightAll();
+                if (typeof Prism !== 'undefined') {
+                    Prism.highlightAll();
+                    $("pre[class*='language-']").each(function(index, item) {
+                        let text = $(item).find("code[class*='language-']").text();
+                        let span = $(`<span class="copy"><i class="fa fa-clone"></i></span>`);
+                        new ClipboardJS(span[0], {
+                            text: () => text
+                        }).on('success', () => Qmsg.success('复制成功！'));
+                        $(item).append(span);
+                    });
+                }
                 // support 百度统计
                 if (typeof _hmt !== 'undefined') _hmt.push(['_trackPageview', location.pathname + location.search]);
                 // support google analytics
