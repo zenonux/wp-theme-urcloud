@@ -17,16 +17,12 @@ var $jscomp=$jscomp||{};$jscomp.scope={};$jscomp.arrayIteratorImpl=function(a){v
 (function ($) {
     $(window).bind("scroll", function () {
         if ($(this).scrollTop() > 200) {
-            $(".back2top").show();
-
             if (!$(".infos").hasClass('fixed')) {
                 $(".infos").addClass('fixed');
                 $(".infos .fixed-title").html($('h1.fullname').html());
                 $(".infos .fixed-menus").html($('nav.header_nav').html());
             }
         } else {
-            $(".back2top").hide();
-
             if ($(".infos").hasClass('fixed')) {
                 $(".infos").removeClass('fixed');
             }
