@@ -3,7 +3,7 @@
         <?php wp_nav_menu(['container' => false, 'theme_location' => 'footer_nav', 'depth' => 0]); ?>
         <div style="display: flex;justify-content: space-between;">
             <div class='left'>
-                <span>&copy; <?= date('Y') ?> <a href="<?= get_bloginfo('url') ?>"><?= get_bloginfo('name') ?></a></span>
+                <span>&copy; <?= get_copyrights_years() ?> <a href="<?= get_bloginfo('url') ?>"><?= get_bloginfo('name') ?></a></span>
                 <?php if (get_option('zh_cn_l10n_icp_num')) { ?>
                     <span> . <a href="https://beian.miit.gov.cn/" target="_blank"><?= get_option('zh_cn_l10n_icp_num') ?></a></span>
                 <?php } ?>

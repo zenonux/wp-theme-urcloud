@@ -164,6 +164,21 @@ function disable_embeds_flush_rewrite_rules()
 
 register_deactivation_hook(__FILE__, 'disable_embeds_flush_rewrite_rules');
 
+
+function get_copyrights_years()
+{
+    $start = get_theme_mod('ur_setting_website_start');
+    $now = date('Y');
+    if (!$start) {
+        return $now;
+    }
+    $year = substr($start, 0, 4);
+    if ($year == $now) {
+        return $now;
+    }
+    return $year . '-' . $now;
+}
+
 // 阻止站内文章互相Pingback 
 function theme_noself_ping(&$links)
 {
