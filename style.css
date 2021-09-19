@@ -1,11 +1,10 @@
 @charset "utf-8";
 /*
-	Theme Name: Adams
-	Theme URL: https://biji.io
+	Theme Name: URCloud
+	Theme URL: https://blog.urcloud.co
 	Description: Simple is beautiful
-	Author: Tokin
-	Author URI: https://biji.io
-	Version: 1.5.6
+	Author: 换个头像心好累
+	Author URI: https://blog.urcloud.co
 */
 /* Reset */
 html { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
@@ -322,21 +321,7 @@ sup {
 .footer {position:relative;z-index:9;line-height:2rem;font-size:.9rem;padding:0 0 1rem 0;border-top: 1px solid rgba(0, 0, 0, 0.08);box-shadow:0 -1px 0 rgba(255, 255, 255, 0.08);}
 .footer .right{float:right}
 .footer .menu{text-align:center;border-bottom: 1px solid rgba(0, 0, 0, 0.08);box-shadow:0 1px 0 rgba(255, 255, 255, 0.08);padding: .5rem 0;margin-bottom:1rem;}
-.setting_tool{position:fixed;bottom:38%;right:0;width:36px;box-shadow:0 0 2px rgba(0,0,0,.1);z-index:99;background:#fff;}
-.setting_tool a{font-size:1rem;text-align:center;line-height:36px;width:36px;height:36px;display:block;cursor:pointer;background:#fff;}
-.setting_tool div{display:none;position:absolute;width:200px;right:100%;background:#fff;padding:10px;box-shadow:0 0 2px rgba(0,0,0,.1);}
-.setting_tool.colors div.c{display:block;height:100px;bottom:-64px;z-index:-2;}
-.setting_tool.colors div.c ul{text-align:center;padding:4px 0;font-size:12px;}
-.setting_tool.colors div.c li{cursor:pointer;}
-.setting_tool.colors div.c li.color{display:inline-block;width:50px;border-radius:99px;margin:0 2px;background:#fff;color:#3274ff;box-shadow:0 0 0 1px rgba(0,0,0,.1) inset;height:28px;line-height:28px;}
-.setting_tool.colors div.c li.color.sepia{background:#eae0be;color:#704214}
-.setting_tool.colors div.c li.color.night{background:#393f56;color:#bdcadb;}
-.setting_tool.colors div.c li.hr{display:block;width:100%;height:1px;background:rgba(0,0,0,.06);margin:8% 0 6%;}
-.setting_tool.colors div.c li.font{display:inline-block;width:50px;font-size:16px;line-height:20px;margin:0 16px;font-family:sans-serif;}
-.setting_tool.colors div.c li.font.serif{font-family:serif;}
-.setting_tool.colors div.c li.font:hover{font-weight:bold;}
-.setting_tool.search div.s{display:block;height:36px;bottom:36px;z-index:-1;padding:0;}
-.setting_tool.search div.s input{height:36px;bottom:32px;width:100%;padding:0 10px;font-size:.9rem;}
+
 
 /* Archives */
 .archives table,.archives tr,.archives td{border:none;color:#ccc;}
@@ -412,7 +397,6 @@ ul.links li:hover .bg{opacity:.32}
         transition: 300ms;
     }
 
-    .setting_tool.colors div.c,.setting_tool.search div.s{-webkit-animation:right-show .3s;animation:right-show .3s;}
 
     .main-load .post-list .meta,.main-load,.comments{/*animation:.5s forwards 1 top-show;*/
         opacity:0;
@@ -448,312 +432,6 @@ ul.links li:hover .bg{opacity:.32}
     }
 }
 
-/* 护眼模式 */
-body.sepia .header .menu li,
-body.sepia a,
-body.sepia .archives tr a,
-body.sepia ul.link-items li a,
-body.sepia .readerswall li a {
-    color: #b38a60;
-}
-
-body.sepia .header .menu li:hover,
-body.sepia .header .menu li:hover a,
-body.sepia .current-menu-item,
-body.sepia .current_page_item,
-body.sepia .current-menu-parent,
-body.sepia .current-post-parent,
-body.sepia .view-img span,
-body.sepia a:hover,
-body.sepia .archives tr a:hover,
-body.sepia ul.link-items li a:hover,
-body.sepia .readerswall li a:hover {
-    color: #704214 !important;
-}
-
-body.sepia,
-body.sepia .post-list .meta header h2,
-body.sepia .infos.fixed .fixed-title,
-body.sepia .infos,
-body.sepia .infos.donate-close .donate .window,
-body.sepia .infos.share-close .qrcode {
-    background: #f3eacb;
-    color: #704214;
-}
-
-body.sepia .infos.donate-close .donate .window,
-body.sepia .infos.share-close .qrcode {
-    box-shadow: 0 2px 3px rgba(112, 66, 20, 0.2);
-}
-
-body.sepia .alink hr {
-    background: #eae0be;
-}
-
-body.sepia .header h1,
-body.sepia .current-menu-item a,
-body.sepia .current_page_item a,
-body.sepia .current-menu-parent a,
-body.sepia .current-post-parent a,
-body.sepia .social * {
-    color: #704214;
-}
-
-body.sepia .header .menu li:after,
-body.sepia .footer .menu li:after {
-    background: #a98c51;
-}
-
-body.sepia .infos:before,
-body.sepia .infos:after {
-    background: #eae0be;
-}
-
-body.sepia .infos.fixed {
-    box-shadow: 0 2px 3px rgba(169, 140, 81, 0.1);
-}
-
-body.sepia .alink {
-    border-top: 1px solid #eae0be;
-}
-
-body.sepia .post-list .meta header h2:hover {
-    color: #361e07;
-}
-
-body.sepia .post-list .reade_more a:hover {
-    background: #704214;
-    text-decoration: none;
-}
-
-body.sepia .comment .comment {
-    border-left: 1px solid #a98c51;
-}
-
-body.sepia .post_article ol,
-body.sepia .post_article ul {
-    background: #eae0be;
-}
-
-body.sepia .post-list .meta footer span,
-body.sepia .comment-meta a,
-body.sepia .comment-author span,
-body.sepia .infos,
-body.sepia .infos a {
-    color: #a98c51;
-}
-
-body.sepia .comment .comment-author .avatar,
-body.sepia .comment .comment-author:before,
-body.sepia #commentform input,
-body.sepia #commentform textarea,
-body.sepia #commentform input#submit:focus {
-    background: #f3eacb;
-    border: 1px solid #a98c51;
-    color: #a98c51;
-}
-
-body.sepia #commentform textarea:focus,
-body.sepia #commentform input:focus,
-body.sepia #commentform input#submit:hover {
-    border-color: #704214;
-}
-
-body.sepia #commentform input#submit:hover {
-    background: #704214;
-}
-
-body.sepia .nearbypost {
-    box-shadow: 0 1px 0 #a98c51, 0 -1px 0 #a98c51;
-}
-
-body.sepia .nearbypost div.alignright {
-    box-shadow: -1px 0 0 #a98c51;
-}
-
-body.sepia .archives table,
-body.sepia .archives tr,
-body.sepia .archives td {
-    color: #704214;
-}
-
-body.sepia .post-list .reade_more .page-numbers,
-body.sepia .post-list .reade_more .page-numbers:hover,
-body.sepia .post-list .reade_more span.page-numbers {
-    background: none;
-    box-shadow: 0 0 0 1px #a98c51 inset;
-}
-
-body.sepia .view-img span:after,
-body.sepia .post-list .reade_more .page-numbers:hover,
-body.sepia .post-list .reade_more span.page-numbers {
-    background: #704214 !important;
-    box-shadow: none;
-}
-
-body.sepia .view-img {
-    background: rgba(169, 140, 81, 0.96) !important;
-}
-
-/* 夜间模式 */
-body.night .post_article ol,
-body.night .post_article ul,
-body.night blockquote,
-body.night q,
-body.night code {
-    background: rgba(255, 255, 255, 0.06);
-    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
-}
-body.night .header .menu li,
-body.night a,
-body.night .archives tr a,
-body.night ul.link-items li a,
-body.night .readerswall li a {
-    color: #666e8e;
-}
-
-body.night .header .menu li:hover,
-body.night .header .menu li:hover a,
-body.night .current-menu-item,
-body.night .current_page_item,
-body.night .current-menu-parent,
-body.night .current-post-parent,
-body.night a:hover,
-body.night .archives tr a:hover,
-body.night ul.link-items li a:hover,
-body.night .readerswall li a:hover {
-    color: #bdcadb !important;
-}
-
-body.night,
-body.night .post-list .meta header h2,
-body.night .infos.fixed .fixed-title,
-body.night .infos,
-body.night .infos.donate-close .donate .window,
-body.night .infos.share-close .qrcode {
-    background: #1c1f2b;
-    color: #bdcadb;
-}
-
-body.night .infos.donate-close .donate .window,
-body.night .infos.share-close .qrcode {
-    box-shadow: 0 1px 0 #393f56, -1px 0 0 #393f56, 1px 0 0 #393f56;
-}
-
-body.night .header:after,
-body.night .header .menu li:after,
-body.night .footer .menu li:after,
-body.night .alink hr {
-    background: #393f56;
-}
-
-body.night .header h1,
-body.night .current-menu-item a,
-body.night .current_page_item a,
-body.night .current-menu-parent a,
-body.night .current-post-parent a,
-body.night .social * {
-    color: #bdcadb;
-}
-
-body.night .infos:before,
-body.night .infos:after {
-    background: #393f56;
-}
-
-body.night .post-list .reade_more .page-numbers,
-body.night .post-list .reade_more .page-numbers:hover,
-body.night .post-list .reade_more span.page-numbers {
-    background: #393f56;
-    box-shadow: none;
-    color: #bdcadb;
-}
-
-body.night .post-list .reade_more .page-numbers:hover,
-body.night .post-list .reade_more span.page-numbers {
-    background: #666e8e;
-}
-
-body.night .infos.fixed {
-    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
-}
-
-body.night .alink {
-    border-top: 1px solid #393f56;
-}
-
-body.night .post-list .meta header h2:hover {
-    color: #fff;
-}
-
-body.night .post-list .reade_more a,
-body.night .post-list .reade_more a:hover {
-    background: #666e8e;
-    color: #1c1f2b;
-}
-
-body.night .post-list .reade_more a:hover {
-    color: #fff;
-}
-
-body.night .comment .comment {
-    border-left: 1px solid #393f56;
-}
-
-body.night .post-list .meta footer span,
-body.night .comment-meta a,
-body.night .comment-author span,
-body.night .infos,
-body.night .infos a {
-    color: #666e8e;
-}
-
-body.night .comment .comment-author .avatar,
-body.night .comment .comment-author:before,
-body.night #commentform input,
-body.night #commentform textarea,
-body.night #commentform input#submit:focus {
-    color: #bdcadb;
-    background: #1c1f2b;
-    border: 1px solid #393f56;
-}
-
-body.night #commentform textarea:focus,
-body.night #commentform input:focus,
-body.night #commentform input#submit:hover {
-    border-color: #bdcadb;
-}
-
-body.night #commentform input#submit {
-    color: #fff;
-}
-
-body.night #commentform input#submit:hover {
-    background: #393f56;
-    border-color: #393f56;
-}
-
-body.night .nearbypost {
-    box-shadow: 0 1px 0 #393f56, 0 -1px 0 #393f56;
-}
-
-body.night .nearbypost div.alignright {
-    box-shadow: -1px 0 0 #393f56;
-}
-
-body.night .view-img {
-    background: rgba(28, 31, 43, 0.9) !important;
-}
-
-body.night .setting_tool,
-body.night .setting_tool a,
-body.night .setting_tool.colors div.c,
-body.night .setting_tool.search div.s input,
-body.night .setting_tool.search div.s input::placeholder {
-    background: #393f56;
-    color: #bdcadb;
-}
-
 /* custom css */
 pre{
     margin: 15px auto;
@@ -782,18 +460,6 @@ pre{
     padding:0 10px;
     width: 140px;
     font-size:.9rem;
-}
-body.night .ur-search-box .sosearch{
-    background: #393f56;
-    color: #bdcadb;
-}
-body.night .ur-search-box input{
-    background: #393f56;
-    color: #bdcadb;
-}
-body.sepia .ur-search-box .sosearch{
-    color: #b38a60;
-    background: #fff;
 }
 @media(max-width: 42rem) {
     .ur-search-box{

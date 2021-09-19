@@ -33,35 +33,7 @@ var $jscomp=$jscomp||{};$jscomp.scope={};$jscomp.arrayIteratorImpl=function(a){v
         }
         obj.scroll_top = $(this).scrollTop();
     });
-    $(document).on('click', '.setting_tool a', function (e) {
-        if ($(this).is('.back2top')) {
-            return $("html,body").animate({scrollTop: 0}, 400);
-        } else {
-            obj.st = $('.setting_tool');
-            if ($(this).is('.sosearch') && !obj.st.is('.search')) {
-                obj.st.addClass('search');
-            } else if ($(this).is('.socolor') && !obj.st.is('.colors')) {
-                obj.st.addClass('colors');
-            } else {
-                obj.st.removeClass('search');
-                obj.st.removeClass('colors');
-            }
-        }
-    });
-    $(document).on('click', '.setting_tool .c ul li', function (e) {
-        obj.lis = $(this);
-        if (obj.lis.is('.sepia')) {
-            localStorage.adams_color_style = "sepia";
-        } else if (obj.lis.is('.night')) {
-            localStorage.adams_color_style = "night";
-        } else if (obj.lis.is('.serif')) {
-            localStorage.adams_font_style = "serif";
-        } else {
-            obj.lis.is('.undefined') ? localStorage.removeItem('adams_color_style') : localStorage.removeItem('adams_font_style');
-        }
-        $("body").removeClass().addClass(localStorage.adams_color_style || "").addClass(localStorage.adams_font_style || "");
-    });
-
+ 
     $(document).on('click', '.comment-navigation a', function (e) {
         e.preventDefault();
         if (history.pushState) {

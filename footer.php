@@ -15,29 +15,6 @@
     </section>
 </footer>
 
-<div class="setting_tool iconfont">
-    <a class="back2top" style="display:none;"><i class="czs-arrow-up-l"></i></a>
-    <?php if (!is_home() && !is_front_page()) { ?>
-        <a class="home" href="<?php bloginfo('url'); ?>"><i class="czs-home-l"></i></a>
-    <?php } ?>
-    <a class="sosearch"><i class="czs-search-l"></i></a>
-    <a class="socolor"><i class="czs-clothes-l"></i></a>
-    <div class="s">
-        <form method="get" action="<?php bloginfo('url'); ?>" class="search">
-            <input class="search-key" name="s" autocomplete="off" placeholder="输入关键词..." type="text" value="" required="required">
-        </form>
-    </div>
-    <div class="c">
-        <ul>
-            <li class="color undefined">默认</li>
-            <li class="color sepia">护眼</li>
-            <li class="color night">夜晚</li>
-            <li class="hr"></li>
-            <li class="font serif">Serif</li>
-            <li class="font sans">Sans</li>
-        </ul>
-    </div>
-</div>
 
 <?php wp_footer(); ?>
 <script data-no-instant>
