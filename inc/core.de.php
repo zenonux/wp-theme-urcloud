@@ -102,7 +102,7 @@ function theme_customize_register($wp_customize)
         'type' => 'checkbox'
     ));
     $wp_customize->add_control('biji_setting_viewimage', array(
-        'label' => '关闭默认灯箱',
+        'label' => '关闭默认图片灯箱',
         'section' => 'biji_setting',
         'type' => 'checkbox'
     ));
