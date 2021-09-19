@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href="<?php bloginfo('template_url'); ?>/style.css?<?php echo THEME_DB_VERSION; ?>" type="text/css" rel="stylesheet">
     <link href="<?php bloginfo('template_url'); ?>/static/caomei/style.css?<?php echo THEME_DB_VERSION; ?>" type="text/css" rel="stylesheet">
     <?php wp_head(); ?>
 </head>
@@ -46,7 +45,7 @@
                             <input class="search-key" name="s" autocomplete="off" placeholder="输入关键词..." type="text" value="" required="required">
                         </form>
                     </div>
-                    <a class="sosearch"><i class="czs-search-l"></i></a>
+                    <a class="sosearch"><i class="fa fa-search"></i></a>
                 </div>
             </div>
         </section>
@@ -58,10 +57,10 @@
                     <!--<div class="fixed-menus"></div>-->
 
                     <div class="fields">
-                        <span><i class="czs-time-l"></i> <time datetime="<?php echo get_the_time('c'); ?>" title="<?php echo get_the_time('c'); ?>" itemprop="datePublished" pubdate><?php the_time('Y-m-d') ?></time></span> /
-                        <span><i class="czs-talk-l"></i> <?php comments_number('0', '1', '%'); ?>评</span> /
+                        <span><i class="fa fa-clock-o"></i> <time datetime="<?php echo get_the_time('c'); ?>" title="<?php echo get_the_time('c'); ?>" itemprop="datePublished" pubdate><?php the_time('Y-m-d') ?></time></span> /
+                        <span><i class="fa fa-commment-o"></i> <?php comments_number('0', '1', '%'); ?>评</span> /
                         <a href="javascript:;" data-action="topTop" data-id="<?php the_ID(); ?>" class="dot-good <?php echo isset($_COOKIE['dotGood_' . $post->ID]) ? 'done' : ''; ?>">
-                            <i class="czs-thumbs-up-l"></i><i class="czs-thumbs-up"></i>
+                            <i class="fa fa-thumbs-o-up"></i><i class="fa fa-thumbs-up"></i>
                             <span class="count"><?php echo get_post_meta($post->ID, 'dotGood', true) ? get_post_meta($post->ID, 'dotGood', true) : '0'; ?></span>赞
                         </a>
                     </div>

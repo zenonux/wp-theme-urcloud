@@ -16,6 +16,8 @@ if (version_compare($GLOBALS['wp_version'], '4.4-alpha', '<')) {
 
 require(get_template_directory() . '/inc/core.de.php');
 
+
+
 /**
  * 挂载脚本
  */
@@ -62,6 +64,12 @@ function biji_enqueue_scripts()
             THEME_DB_VERSION
         );
     }
+    wp_enqueue_style(
+        'font-awesome',
+        '//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css',
+        array(),
+        THEME_DB_VERSION
+    );
     wp_enqueue_script(
         'instantclick',
         '//cdn.staticfile.org/instantclick/3.0.1/instantclick.min.js',
