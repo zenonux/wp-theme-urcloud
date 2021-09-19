@@ -69,9 +69,6 @@ function theme_customize_register($wp_customize)
     $wp_customize->add_setting('biji_setting_lately', array(
         'default' => '',
     ));
-    $wp_customize->add_setting('biji_setting_auto_mode', array(
-        'default' => '',
-    ));
     $wp_customize->add_setting('biji_setting_placard', array(
         'default' => '简单传递美好',
     ));
@@ -119,17 +116,12 @@ function theme_customize_register($wp_customize)
         'section' => 'biji_setting',
         'type' => 'checkbox'
     ));
-    $wp_customize->add_control('biji_setting_auto_mode', array(
-        'label' => '自动夜间模式',
-        'section' => 'biji_setting',
-        'type' => 'checkbox'
-    ));
     $wp_customize->add_control('biji_setting_placard', array(
         'label' => '网站公告',
         'section' => 'biji_setting'
     ));
     $wp_customize->add_control('biji_setting_beian', array(
-        'label' => '备案号',
+        'label' => '网站备案号',
         'section' => 'biji_setting'
     ));
     $wp_customize->add_control('biji_setting_cdn', array(
