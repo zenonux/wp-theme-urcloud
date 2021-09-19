@@ -9,7 +9,46 @@
 
 /* Reset */
 @import './static/less/_reset.less';
-@import './static/less/_code.less';
+
+// prism code
+.post_article pre[class*='language-'] {
+  position: relative;
+  margin: 0 0 18px;
+  padding: 30px 0 0;
+  font-size: 14px;
+  border-radius: 4px;
+  overflow: hidden;
+  code[class*='language-'] {
+    display: block;
+    overflow: auto;
+    padding: 0 15px 12px;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 9px;
+    left: 15px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #fc625d;
+    box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
+    z-index: 1;
+  }
+  .copy {
+    position: absolute;
+    top: 9px;
+    right: 15px;
+    z-index: 5;
+    color: #909399;
+    transition: color 0.35s;
+    cursor: pointer;
+    user-select: none;
+    &:hover {
+      color: #c0c4cc;
+    }
+  }
+}
 
 /* Layouts */
 .container {
@@ -81,7 +120,11 @@
   height: 1rem;
   position: absolute;
 }
-
+.header_nav_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .header .menu {
   margin: 1rem 0;
   padding: 1rem 0;
@@ -1365,11 +1408,6 @@ ul.links li:hover .bg {
 /* custom css */
 pre {
   margin: 15px auto;
-}
-.header_nav_wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 .ur-search-box {
   display: flex;

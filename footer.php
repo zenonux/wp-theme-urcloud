@@ -39,7 +39,7 @@
                     });
                 <?php }
                 if (!get_theme_mod('biji_setting_prettify')) { ?>
-                    prettyPrint();
+                    Prism.highlightAll();
                 <?php } ?>
 
                 $('ul.links li a').each(function() {
@@ -73,8 +73,8 @@
             if (isInitialLoad === false) {
                 // support MathJax
                 if (typeof MathJax !== 'undefined') MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-                // support google code prettify
-                if (typeof prettyPrint !== 'undefined') prettyPrint();
+                // support Prism code prettify
+                if (typeof Prism !== 'undefined') Prism.highlightAll();
                 // support 百度统计
                 if (typeof _hmt !== 'undefined') _hmt.push(['_trackPageview', location.pathname + location.search]);
                 // support google analytics
