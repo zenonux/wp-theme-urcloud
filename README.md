@@ -1,13 +1,13 @@
 # URCloud
 
-针对中文站点设计的简约风格 Wordpress 主题
+为中文站点设计的简约风格 Wordpress 主题
 
 ## 特点
 
 - 简约的响应式主题，专注于内容创作
 - 基于 Prism 的代码高亮
 
-## ToDo
+## Todo
 
 - 代码复制功能
 - 修复登录 session 的编辑 bug
