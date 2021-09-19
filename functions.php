@@ -1,12 +1,12 @@
 <?php
 
 /**
- * @link http://biji.io
+ * @link https://blog.urcloud.co
  *
  * @package WordPress
- * @subpackage Adams
+ * @subpackage URCloud
  */
-if (!defined('THEME_NAME')) define('THEME_NAME', 'Adams');
+if (!defined('THEME_NAME')) define('THEME_NAME', 'URCloud');
 if (!defined('THEME_DB_VERSION')) {
     define('THEME_DB_VERSION', wp_get_theme()->Version);
 }
