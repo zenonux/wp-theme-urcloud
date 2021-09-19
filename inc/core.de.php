@@ -72,9 +72,6 @@ function theme_customize_register($wp_customize)
     $wp_customize->add_setting('biji_setting_auto_mode', array(
         'default' => '',
     ));
-    $wp_customize->add_setting('biji_setting_thumb', array(
-        'default' => '',
-    ));
     $wp_customize->add_setting('biji_setting_placard', array(
         'default' => '简单传递美好',
     ));
@@ -124,11 +121,6 @@ function theme_customize_register($wp_customize)
     ));
     $wp_customize->add_control('biji_setting_auto_mode', array(
         'label' => '自动夜间模式',
-        'section' => 'biji_setting',
-        'type' => 'checkbox'
-    ));
-    $wp_customize->add_control('biji_setting_thumb', array(
-        'label' => '开启文章缩略图',
         'section' => 'biji_setting',
         'type' => 'checkbox'
     ));
@@ -288,24 +280,7 @@ function biji_crop_thumbnail($url, $width, $height = null)
     return is_wp_error($editor->save($file_path, 'image/jpg')) ? $url : $file_url;
 }
 
-//缩略图获取post_thumbnail
-function post_thumbnail($width = 275, $height = 170)
-{
-    global $post;
-    if (has_post_thumbnail($post->ID)) {
-        $thumbnail_ID = get_post_thumbnail_id($post->ID);
-        $thumbnailsrc = wp_get_attachment_image_src($thumbnail_ID, 'full');
-        if ($width == 0 && $height == 0) return $thumbnailsrc[0];
-        else return biji_crop_thumbnail($thumbnailsrc[0], $width, $height);
-    } else {
-        $content = $post->post_content;
-        preg_match_all('/<img.*?(?: |\\t|\\r|\\n)?src=[\'"]?(.+?)[\'"]?(?:(?: |\\t|\\r|\\n)+.*?)?>/sim', $content, $strResult, PREG_PATTERN_ORDER);
-        if (count($strResult[1]) > 0) {
-            if ($width == 0 && $height == 0) return $strResult[1][0];
-            else return biji_crop_thumbnail($strResult[1][0], $width, $height);
-        } else return false;
-    }
-}
+
 
 //点赞
 function dotGood()

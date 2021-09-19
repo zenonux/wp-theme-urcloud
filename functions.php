@@ -89,7 +89,6 @@ remove_action('wp_print_styles', 'print_emoji_styles');
 remove_filter('the_content_feed', 'wp_staticize_emoji');
 remove_filter('comment_text_rss', 'wp_staticize_emoji');
 remove_filter('wp_mail', 'wp_staticize_emoji_for_email');
-if (function_exists('add_theme_support')) add_theme_support('post-thumbnails'); //添加特色缩略图支持
 
 // 禁止wp-embed.min.js
 function disable_embeds_init()
