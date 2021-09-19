@@ -19,9 +19,9 @@ require(get_template_directory() . '/inc/core.de.php');
 
 
 /**
- * 挂载脚本
+ * 挂载样式和脚本
  */
-function biji_enqueue_scripts()
+function ur_enqueue_styles_scripts()
 {
     wp_deregister_script('jquery');
     wp_enqueue_script(
@@ -30,26 +30,21 @@ function biji_enqueue_scripts()
         array(),
         THEME_DB_VERSION
     );
-    wp_enqueue_script(
-        'script-js',
-        get_template_directory_uri() . '/static/script.js',
+
+    wp_enqueue_style(
+        'font-awesome',
+        '//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css',
         array(),
         THEME_DB_VERSION
     );
+
     wp_enqueue_script(
-        'ajax-comment',
-        get_template_directory_uri() . '/static/ajax-comment.js',
+        'clipboard',
+        '//cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js',
         array(),
-        THEME_DB_VERSION,
-        true
+        THEME_DB_VERSION
     );
-    wp_localize_script(
-        'ajax-comment',
-        'themeAdminAjax',
-        array(
-            'url' => admin_url('admin-ajax.php')
-        )
-    );
+
     if (!get_theme_mod('biji_setting_prettify')) {
         wp_enqueue_style(
             'prismCSS',
@@ -64,6 +59,7 @@ function biji_enqueue_scripts()
             THEME_DB_VERSION
         );
     }
+
     wp_enqueue_style(
         'qmsgCSS',
         '//cdn.jsdelivr.net/npm/typecho-joe-next@6.0.0/plugin/qmsg/qmsg.css',
@@ -76,27 +72,38 @@ function biji_enqueue_scripts()
         array(),
         THEME_DB_VERSION
     );
-    wp_enqueue_style(
-        'font-awesome',
-        '//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css',
-        array(),
-        THEME_DB_VERSION
-    );
+
     wp_enqueue_script(
-        'clipboard',
-        '//cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js',
+        'ajax-comment',
+        get_template_directory_uri() . '/static/ajax-comment.js',
         array(),
-        THEME_DB_VERSION
+        THEME_DB_VERSION,
+        true
     );
+    wp_localize_script(
+        'ajax-comment',
+        'themeAdminAjax',
+        array(
+            'url' => admin_url('admin-ajax.php')
+        )
+    );
+
     wp_enqueue_script(
         'instantclick',
         '//cdn.staticfile.org/instantclick/3.0.1/instantclick.min.js',
         array(),
         THEME_DB_VERSION
     );
+
+    wp_enqueue_script(
+        'script-js',
+        get_template_directory_uri() . '/static/script.js',
+        array(),
+        THEME_DB_VERSION
+    );
 }
 
-add_action('wp_enqueue_scripts', 'biji_enqueue_scripts', 1);
+add_action('wp_enqueue_scripts', 'ur_enqueue_styles_scripts', 1);
 
 // 优化代码
 remove_action('wp_head', 'feed_links_extra', 3); // 额外的feed,例如category, tag页

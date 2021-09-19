@@ -113,7 +113,6 @@
         jQuery.adamsOverload();
     <?php } ?>
 </script>
-<!--网站效率：<?php timer_stop(4); ?>秒内查询了<?= get_num_queries(); ?>次数据库-->
 </body>
 
 </html>
