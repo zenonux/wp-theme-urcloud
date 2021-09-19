@@ -29,12 +29,6 @@ function biji_enqueue_scripts()
         THEME_DB_VERSION
     );
     wp_enqueue_script(
-        'qrcode-js',
-        '//cdn.staticfile.org/qrcodejs/1.0.0/qrcode.min.js',
-        array(),
-        THEME_DB_VERSION
-    );
-    wp_enqueue_script(
         'script-js',
         get_template_directory_uri() . '/static/script.js',
         array(),

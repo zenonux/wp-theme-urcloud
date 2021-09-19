@@ -65,25 +65,6 @@
                             <span class="count"><?php echo get_post_meta($post->ID, 'dotGood', true) ? get_post_meta($post->ID, 'dotGood', true) : '0'; ?></span>赞
                         </a>
                     </div>
-
-                    <div class="socials">
-                        <div class="donate">
-                            <a href="javascript:;"><i class="czs-coin-l s"></i><i class="czs-coin h"></i> 赏</a>
-                            <div class="window">
-                                <ul>
-                                    <?php if (get_option('biji_pay_img_alipay')) echo '<li class="alipay"><img src="' . get_option('biji_pay_img_alipay') . '"/></li>'; ?>
-                                    <?php if (get_option('biji_pay_img_wexpay')) echo '<li><img src="' . get_option('biji_pay_img_wexpay') . '"/></li>'; ?>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="share">
-                            <a href="javascript:void(0);" data-qrcode="//api.qrserver.com/v1/create-qr-code/?size=150x150&margin=10&data=<?php the_permalink(); ?>">
-                                <i class="czs-scan-l s"></i><i class="czs-qrcode-l h"></i> 码</a>
-                            <div class="qrcode">
-                                <div class="img-box"></div> <i>移动设备上继续阅读</i>
-                            </div>
-                        </div>
-                    </div>
                 <?php } else { ?>
                     <h2 class="fixed-title"></h2>
                     <div class="fixed-menus"></div>
