@@ -53,7 +53,9 @@
         <section class="infos">
             <div class="container">
                 <?php if (is_single() || is_page()) { ?>
-                    <h2 class="fixed-title"></h2>
+                    <a href="<?php bloginfo('url'); ?>">
+                        <h2 class="fixed-title"></h2>
+                    </a>
                     <!--<div class="fixed-menus"></div>-->
 
                     <div class="fields">
@@ -65,7 +67,9 @@
                         </a>
                     </div>
                 <?php } else { ?>
-                    <h2 class="fixed-title"></h2>
+                    <a href="<?php bloginfo('url'); ?>">
+                        <h2 class="fixed-title"></h2>
+                    </a>
                     <div class="fixed-menus"></div>
                     <div class="placard">
                         <?= get_theme_mod('biji_setting_placard'); ?>
