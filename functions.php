@@ -23,6 +23,7 @@ require(get_template_directory() . '/inc/core.de.php');
  */
 function ur_enqueue_styles_scripts()
 {
+
     wp_deregister_script('jquery');
     wp_enqueue_script(
         'jquery-min',
@@ -30,6 +31,7 @@ function ur_enqueue_styles_scripts()
         array(),
         THEME_DB_VERSION
     );
+
 
     wp_enqueue_style(
         'font-awesome',
@@ -93,13 +95,6 @@ function ur_enqueue_styles_scripts()
         array(
             'url' => admin_url('admin-ajax.php')
         )
-    );
-
-    wp_enqueue_script(
-        'instantclick',
-        '//cdn.staticfile.org/instantclick/3.0.1/instantclick.min.js',
-        array(),
-        THEME_DB_VERSION
     );
 
     wp_enqueue_script(

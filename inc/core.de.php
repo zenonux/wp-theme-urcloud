@@ -55,9 +55,6 @@ function theme_customize_register($wp_customize)
         'priority' => 101
     ));
 
-    $wp_customize->add_setting('biji_setting_pjax', array(
-        'default' => '',
-    ));
     $wp_customize->add_setting('biji_setting_viewimage', array(
         'default' => '',
     ));
@@ -92,12 +89,6 @@ function theme_customize_register($wp_customize)
         'default' => '',
     ));
 
-
-    $wp_customize->add_control('biji_setting_pjax', array(
-        'label' => '关闭PJAX',
-        'section' => 'biji_setting',
-        'type' => 'checkbox'
-    ));
     $wp_customize->add_control('biji_setting_viewimage', array(
         'label' => '关闭默认图片灯箱',
         'section' => 'biji_setting',
