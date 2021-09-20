@@ -69,11 +69,10 @@
             }
         });
     })(jQuery);
+    jQuery.adamsOverload();
     <?php if (get_theme_mod('biji_setting_footInfo')) {
         echo get_theme_mod('biji_setting_footInfo') . "\n";
-    } else { ?>
-        jQuery.adamsOverload();
-    <?php } ?>
+    } ?>
 </script>
 </body>
 
