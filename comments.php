@@ -5,14 +5,14 @@ if (post_password_required()) {
 ?>
 <!-- Comments -->
 <section class="comments">
-    <div class="container" data-no-instant>
+    <div class="container">
         <div id="comments" class="comments-area">
             <?php
             if (have_comments()) { ?>
                 <ol class="comment-list">
                     <?php wp_list_comments(); ?>
                 </ol>
-                <?php
+            <?php
                 the_comments_navigation(['prev_text' => "Old comments", 'next_text' => "New comments",]);
             } ?>
         </div>
@@ -23,4 +23,3 @@ if (post_password_required()) {
         comment_form(); ?>
     </div>
 </section>
-

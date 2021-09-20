@@ -17,11 +17,8 @@
 
 
 <?php wp_footer(); ?>
-<script data-no-instant>
+<script>
     (function($) {
-        <?php if (is_user_logged_in()) { ?>
-            $('#wpadminbar').attr('data-no-instant', '')
-        <?php } ?>
         $.extend({
             adamsOverload: function() {
                 $(".post_article a").attr("rel", "external");
