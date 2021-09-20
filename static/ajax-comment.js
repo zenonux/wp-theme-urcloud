@@ -1,5 +1,6 @@
 (function ($) {
 
+    // 点赞
     $(".dot-good").click(function () {
         var id = $(this).data("id"),
         action = $(this).data('action'),
@@ -7,7 +8,7 @@
         if (Cookies.get('dotGood_'+id)) {
             $(".dot-good .icon-1").removeClass("active");
             $(".dot-good .icon-2").addClass("active");
-            alert('点多了伤身体~');
+            Qmsg.warning('点多了伤身体~');
             return false;
         } else {
             $('.dot-good').addClass('done');
