@@ -54,9 +54,7 @@ function theme_customize_register($wp_customize)
         'title' => '主题设置',
         'priority' => 101
     ));
-    $wp_customize->add_setting('biji_setting_enc', array(
-        'default' => '',
-    ));
+
     $wp_customize->add_setting('biji_setting_pjax', array(
         'default' => '',
     ));
@@ -94,11 +92,7 @@ function theme_customize_register($wp_customize)
         'default' => '',
     ));
 
-    $wp_customize->add_control('biji_setting_enc', array(
-        'label' => '允许纯英文评论',
-        'section' => 'biji_setting',
-        'type' => 'checkbox'
-    ));
+
     $wp_customize->add_control('biji_setting_pjax', array(
         'label' => '关闭PJAX',
         'section' => 'biji_setting',
@@ -158,17 +152,7 @@ function theme_customize_register($wp_customize)
 
 add_action('customize_register', 'theme_customize_register');
 
-// 纯英文评论拦截
-function scp_comment_post($incoming_comment)
-{
-    if (!get_theme_mod('biji_setting_enc') && !preg_match('/[一-龥]/u', $incoming_comment['comment_content'])) {
-        header('HTTP/1.1 301 Moved Permanently');
-        die("Comments must include Chinese!");
-    }
-    return ($incoming_comment);
-}
 
-add_filter('preprocess_comment', 'scp_comment_post');
 
 // Gravatar头像使用镜像服务器
 function biji_get_avatar($avatar)
