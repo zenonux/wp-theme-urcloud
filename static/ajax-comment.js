@@ -6,8 +6,6 @@
         action = $(this).data('action'),
         rateHolder = $('.dot-good').children('.count');
         if (Cookies.get('dotGood_'+id)) {
-            $(".dot-good .icon-1").removeClass("active");
-            $(".dot-good .icon-2").addClass("active");
             Qmsg.warning('点多了伤身体~');
             return false;
         } else {
