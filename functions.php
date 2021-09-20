@@ -39,6 +39,13 @@ function ur_enqueue_styles_scripts()
     );
 
     wp_enqueue_script(
+        'js-cookie',
+        '//cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js',
+        array(),
+        THEME_DB_VERSION
+    );
+
+    wp_enqueue_script(
         'clipboard',
         '//cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js',
         array(),

@@ -1,14 +1,16 @@
 (function ($) {
 
     $(".dot-good").click(function () {
-        if ($(this).hasClass('done')) {
+        var id = $(this).data("id"),
+        action = $(this).data('action'),
+        rateHolder = $('.dot-good').children('.count');
+        if (Cookies.get('dotGood_'+id)) {
+            $(".dot-good .icon-1").removeClass("active");
+            $(".dot-good .icon-2").addClass("active");
             alert('点多了伤身体~');
             return false;
         } else {
-            $(this).addClass('done');
-            var id = $(this).data("id"),
-                action = $(this).data('action'),
-                rateHolder = $(this).children('.count');
+            $('.dot-good').addClass('done');
             var ajax_data = {
                 action: "dotGood",
                 um_id: id,
@@ -17,6 +19,8 @@
             $.post(themeAdminAjax.url, ajax_data, function (data) {
                 $(rateHolder).html(data);
             });
+            $(".dot-good .icon-1").addClass("active");
+            $(".dot-good .icon-2").removeClass("active");
             return false;
         }
     });
