@@ -60,7 +60,9 @@
 
                     <div class="fields">
                         <span><i class="fa fa-clock-o"></i> <time datetime="<?php echo get_the_time('c'); ?>" title="<?php echo get_the_time('c'); ?>" itemprop="datePublished" pubdate><?php the_time('Y-m-d') ?></time></span> /
-                        <span><i class="fa fa-user-o"></i> <?php echo get_the_author_meta('display_name', $post->post_author);  ?></span> /
+                        <?php if (get_the_author_meta('display_name', $post->post_author)) { ?>
+                            <span><i class="fa fa-user-o"></i> <?php echo get_the_author_meta('display_name', $post->post_author);  ?></span> /
+                        <?php } ?>
                         <span><i class="fa fa-comment-o"></i> <?php comments_number('0', '1', '%'); ?>评</span> /
                         <a href="javascript:;" data-action="topTop" data-id="<?php the_ID(); ?>" class="dot-good <?php echo isset($_COOKIE['dotGood_' . $post->ID]) ? 'done' : ''; ?>">
                             <i class="fa fa-thumbs-o-up"></i><i class="fa fa-thumbs-up"></i>
