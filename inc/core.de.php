@@ -67,6 +67,12 @@ function theme_customize_register($wp_customize)
     $wp_customize->add_setting('ur_setting_website_start', array(
         'default' => '',
     ));
+    $wp_customize->add_setting('ur_setting_meta_keywords', array(
+        'default' => '',
+    ));
+    $wp_customize->add_setting('ur_setting_meta_description', array(
+        'default' => '',
+    ));
     $wp_customize->add_setting('biji_setting_placard', array(
         'default' => '简单传递美好',
     ));
@@ -108,6 +114,14 @@ function theme_customize_register($wp_customize)
         'label' => '网站建立时间',
         'section' => 'biji_setting',
         'type' => 'date'
+    ));
+    $wp_customize->add_control('ur_setting_meta_keywords', array(
+        'label' => 'Meta Keywords',
+        'section' => 'biji_setting',
+    ));
+    $wp_customize->add_control('ur_setting_meta_description', array(
+        'label' => 'Meta Description',
+        'section' => 'biji_setting',
     ));
     $wp_customize->add_control('biji_setting_placard', array(
         'label' => '网站公告',

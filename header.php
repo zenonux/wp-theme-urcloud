@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="<?= get_theme_mod('ur_setting_meta_keywords'); ?>">
+    <meta name="description" content="<?= get_theme_mod('ur_setting_meta_description'); ?>">
     <link href="<?php bloginfo('template_url'); ?>/style.css?<?php echo THEME_DB_VERSION; ?>" type="text/css" rel="stylesheet">
     <?php wp_head(); ?>
 </head>
