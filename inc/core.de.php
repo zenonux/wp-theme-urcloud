@@ -158,6 +158,17 @@ function theme_customize_register($wp_customize)
 add_action('customize_register', 'theme_customize_register');
 
 
+// 纯英文评论拦截
+function scp_comment_post($incoming_comment)
+{
+    if (!preg_match('/[一-龥]/u', $incoming_comment['comment_content'])) {
+        header('HTTP/1.1 301 Moved Permanently');
+        die("Comments must include Chinese!");
+    }
+    return ($incoming_comment);
+}
+add_filter('preprocess_comment', 'scp_comment_post');
+
 
 // Gravatar头像使用镜像服务器
 function biji_get_avatar($avatar)
