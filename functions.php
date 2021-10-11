@@ -41,6 +41,14 @@ function ur_enqueue_styles_scripts()
     );
 
     wp_enqueue_script(
+        'jquery-throttle-debounce',
+        'https://cdn.jsdelivr.net/npm/jquery-throttle-debounce@1.0.0/jquery.ba-throttle-debounce.min.js',
+        array(),
+        THEME_DB_VERSION
+    );
+
+
+    wp_enqueue_script(
         'js-cookie',
         '//cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js',
         array(),
