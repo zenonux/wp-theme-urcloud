@@ -1325,6 +1325,22 @@ ul.links li:hover .bg {
   display: flex;
   align-items: center;
   box-shadow: 0 0 2px rgb(0 0 0 / 25%);
+  position: relative;
+  .ur-search-tags {
+    position: absolute;
+    top: 32px;
+    left: 0;
+    width: 100%;
+    padding-top: 5px;
+    display: none;
+  }
+  .tag-cloud-link {
+    background: #eee;
+    padding: 5px 12px;
+    border-radius: 30px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
 }
 .ur-search-box .sosearch {
   font-size: 1rem;
@@ -1338,7 +1354,7 @@ ul.links li:hover .bg {
 .ur-search-box input {
   height: 32px;
   padding: 0 10px;
-  width: 140px;
+  width: 180px;
   font-size: 0.9rem;
 }
 @media (max-width: 42rem) {
