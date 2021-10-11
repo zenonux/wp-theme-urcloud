@@ -41,14 +41,7 @@
                     )
                 );
                 ?>
-                <div class="ur-search-box">
-                    <div class="s">
-                        <form method="get" action="<?php bloginfo('url'); ?>" class="search">
-                            <input class="search-key" name="s" autocomplete="off" placeholder="输入关键词..." type="text" value="" required="required">
-                        </form>
-                    </div>
-                    <a class="sosearch"><i class="fa fa-search"></i></a>
-                </div>
+                <?php include('searchform.php'); ?>
             </div>
         </section>
 
@@ -58,8 +51,6 @@
                     <a href="<?php bloginfo('url'); ?>">
                         <h2 class="fixed-title"></h2>
                     </a>
-                    <!--<div class="fixed-menus"></div>-->
-
                     <div class="fields">
                         <span><i class="fa fa-clock-o"></i> <time datetime="<?php echo get_the_time('c'); ?>" title="<?php echo get_the_time('c'); ?>" itemprop="datePublished" pubdate><?php the_time('Y-m-d') ?></time></span> /
                         <?php if (get_the_author_meta('display_name', $post->post_author)) { ?>
@@ -71,6 +62,14 @@
                             <span class="count"><?php echo get_post_meta($post->ID, 'dotGood', true) ? get_post_meta($post->ID, 'dotGood', true) : '0'; ?></span>赞
                         </a>
                     </div>
+                <?php } elseif (is_search()) { ?>
+                    <a href="<?php bloginfo('url'); ?>">
+                        <h2 class="fixed-title"></h2>
+                    </a>
+                    <div class="fixed-menus"></div>
+                    <div class="search-text-info">
+                        ”<?php the_search_query(); ?>”的搜索结果
+                    </div>
                 <?php } else { ?>
                     <a href="<?php bloginfo('url'); ?>">
                         <h2 class="fixed-title"></h2>
@@ -80,6 +79,7 @@
                         <?= get_theme_mod('biji_setting_placard'); ?>
                     </div>
                 <?php } ?>
+
             </div>
         </section>
     </header>
