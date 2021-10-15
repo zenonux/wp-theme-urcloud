@@ -47,11 +47,7 @@
                     });
                 <?php } ?>
 
-                $('ul.links li a').each(function() {
-                    if ($(this).parent().find('.bg').length === 0) {
-                        $(this).parent().append('<div class="bg" style="background-image:url(https://www.google.com/s2/favicons?domain=' + $(this).attr("href") + ')"></div>')
-                    }
-                });
+
 
                 // * Safari
                 if (navigator.vendor.indexOf("Apple") > -1) {
