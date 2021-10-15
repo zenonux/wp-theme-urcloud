@@ -13,13 +13,13 @@
 <script>
     var $tags_list = $(`<?php wp_tag_cloud('smallest=12&largest=12&unit=px'); ?>`).filter('a');
     searchTag()
-    $('.ur-search-box input').on('input', $.debounce(300, {}, searchTag))
+    $('.ur-search-box input').on('input', $.debounce(200, {}, searchTag))
     $('.ur-search-box input').focus(function() {
         $('.ur-search-tags').fadeIn()
     }).blur(function() {
         setTimeout(function() {
             $('.ur-search-tags').hide()
-        }, 300)
+        }, 200)
     })
 
     function searchTag() {
