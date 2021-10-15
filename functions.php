@@ -454,6 +454,8 @@ add_action('wp_enqueue_scripts', 'biji_ajax_comment_scripts');
 add_action('wp_ajax_nopriv_ajax_comment', 'biji_ajax_comment_callback');
 add_action('wp_ajax_ajax_comment', 'biji_ajax_comment_callback');
 
+//友情链接
+add_filter('pre_option_link_manager_enabled', '__return_true');
 
 
 // 全部配置完毕
