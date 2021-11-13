@@ -279,17 +279,23 @@ function dotGood()
 add_action('wp_ajax_nopriv_dotGood', 'dotGood');
 add_action('wp_ajax_dotGood', 'dotGood');
 
-/* Mini Pagenavi v1.0 by Willin Kan. Edit by zwwooooo */
+
+// 分页
 if (!function_exists('pagenavi')) {
-    function pagenavi($p = 5)
+    function pagenavi($p = 5, $max_num_pages = 0)
     {
-        if (is_singular()) {
+        if (is_single() || is_attachment()) {
             return;
         }
         global $wp_query, $paged;
-        $max_page = $wp_query->max_num_pages;
-        if ($max_page == 1) return;
-        if (empty($paged)) $paged = 1;
+        $max_page = $max_num_pages ? $max_num_pages : $wp_query->max_num_pages;
+        if ($max_page == 1) {
+            return;
+        }
+        if (empty($paged)) {
+            $paged = 1;
+        }
+
         //echo '<span class="pages">Page: ' . $paged . ' of ' . $max_page . ' </span> ';
         if ($paged > 1) p_link($paged - 1, '上一页', '«');
         if ($paged > $p + 1) p_link(1, '最前页');
@@ -313,6 +319,9 @@ if (!function_exists('pagenavi')) {
         echo "<a class='page-numbers' href='", esc_html(get_pagenum_link($i)), "' title='{$title}'>{$linktext}</a> ";
     }
 }
+
+
+
 // -- END ----------------------------------------
 
 // End of page.

@@ -15,6 +15,7 @@ get_header(); ?>
                 'paged' => get_query_var('paged')
             );
             $the_query = new WP_Query($args);
+            $max_num_pages = $the_query->max_num_pages;
 
             if ($the_query->have_posts()) {
                 while ($the_query->have_posts()) : $the_query->the_post(); ?>
@@ -52,7 +53,7 @@ get_header(); ?>
             <?php }; ?>
             <nav class="reade_more">
                 <?php if (function_exists('pagenavi')) {
-                    pagenavi(1);
+                    pagenavi(1, $max_num_pages);
                 }
                 ?>
             </nav>
