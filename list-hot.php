@@ -13,9 +13,10 @@ get_header(); ?>
                 'meta_key' => 'dotGood',
                 'orderby' => 'meta_value_num',
             );
-            query_posts($args);
-            if (have_posts()) {
-                while (have_posts()) : the_post(); ?>
+            $the_query = new WP_Query($args);
+
+            if ($the_query->have_posts()) {
+                while ($the_query->have_posts()) : $the_query->the_post(); ?>
 
                     <article class="meta" itemscope="" itemtype="http://schema.org/BlogPosting">
                         <header>

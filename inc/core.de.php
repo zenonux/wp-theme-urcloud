@@ -283,7 +283,9 @@ add_action('wp_ajax_dotGood', 'dotGood');
 if (!function_exists('pagenavi')) {
     function pagenavi($p = 5)
     {
-        if (is_singular()) return;
+        if (is_singular()) {
+            return;
+        }
         global $wp_query, $paged;
         $max_page = $wp_query->max_num_pages;
         if ($max_page == 1) return;
