@@ -12,6 +12,7 @@ get_header(); ?>
             $args = array(
                 'meta_key' => 'dotGood',
                 'orderby' => 'meta_value_num',
+                'paged' => get_query_var('paged')
             );
             $the_query = new WP_Query($args);
 
@@ -52,7 +53,8 @@ get_header(); ?>
             <nav class="reade_more">
                 <?php if (function_exists('pagenavi')) {
                     pagenavi(1);
-                } ?>
+                }
+                ?>
             </nav>
         </div>
     </div>
