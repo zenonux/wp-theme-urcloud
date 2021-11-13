@@ -11,7 +11,7 @@ get_header(); ?>
             <?php
             $args = array(
                 'meta_key' => 'dotGood',
-                'orderby' => 'meta_value',
+                'orderby' => 'meta_value_num',
             );
             query_posts($args);
             if (have_posts()) {
