@@ -56,41 +56,6 @@ function ur_enqueue_styles_scripts()
     );
 
     wp_enqueue_script(
-        'clipboard',
-        '//cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js',
-        array(),
-        THEME_DB_VERSION
-    );
-
-    if (!get_theme_mod('biji_setting_prettify')) {
-        wp_enqueue_style(
-            'prismCSS',
-            '//cdn.jsdelivr.net/npm/prism-theme-one-light-dark@1.0.4/prism-onedark.min.css',
-            array(),
-            THEME_DB_VERSION
-        );
-        wp_enqueue_script(
-            'prismJS',
-            '//cdn.jsdelivr.net/npm/typecho-joe-next@6.2.4/plugin/prism/prism.min.js',
-            array(),
-            THEME_DB_VERSION
-        );
-    }
-
-    wp_enqueue_style(
-        'qmsgCSS',
-        '//cdn.jsdelivr.net/npm/typecho-joe-next@6.0.0/plugin/qmsg/qmsg.css',
-        array(),
-        THEME_DB_VERSION
-    );
-    wp_enqueue_script(
-        'qmsgCSS',
-        '//cdn.jsdelivr.net/npm/typecho-joe-next@6.0.0/plugin/qmsg/qmsg.js',
-        array(),
-        THEME_DB_VERSION
-    );
-
-    wp_enqueue_script(
         'ajax-comment',
         get_template_directory_uri() . '/static/ajax-comment.js',
         array(),

@@ -35,20 +35,7 @@
                         'target': '.commentmetadata a:first-child,.infos time,.post-list time'
                     });
                 <?php }
-                if (!get_theme_mod('biji_setting_prettify')) { ?>
-                    Prism.highlightAll();
-                    $("pre[class*='language-']").each(function(index, item) {
-                        let text = $(item).find("code[class*='language-']").text();
-                        let span = $(`<span class="copy"><i class="fa fa-clone"></i></span>`);
-                        new ClipboardJS(span[0], {
-                            text: () => text
-                        }).on('success', () => Qmsg.success('复制成功！'));
-                        $(item).append(span);
-                    });
-                <?php } ?>
-
-
-
+                ?>
                 // * Safari
                 if (navigator.vendor.indexOf("Apple") > -1) {
                     $("[srcset]").each((index, img) => {
