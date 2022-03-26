@@ -2,7 +2,6 @@
 if (function_exists('register_nav_menus')) {
     register_nav_menus(array(
         'header_nav' => __('站点导航'),
-        'footer_nav' => __('底部导航'),
         'social_nav' => __('社交链接')
     ));
 }
