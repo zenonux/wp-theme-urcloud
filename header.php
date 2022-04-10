@@ -60,7 +60,8 @@
                         <a href="javascript:;" data-action="topTop" data-id="<?php the_ID(); ?>" class="dot-good <?php echo isset($_COOKIE['dotGood_' . $post->ID]) ? 'done' : ''; ?>">
                             <i class="fa fa-thumbs-o-up"></i><i class="fa fa-thumbs-up"></i>
                             <span class="count"><?php echo get_post_meta($post->ID, 'dotGood', true) ? get_post_meta($post->ID, 'dotGood', true) : '0'; ?></span>赞
-                        </a>
+                        </a>/
+                        <span><i class="fa fa-clock-o"></i> 最后更新：<?php the_modified_time('Y-m-d'); ?></span>
                     </div>
                 <?php } elseif (is_search()) { ?>
                     <a href="<?php bloginfo('url'); ?>">
