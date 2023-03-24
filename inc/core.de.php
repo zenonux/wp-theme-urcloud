@@ -50,7 +50,7 @@ class description_walker extends Walker_Nav_Menu
 function theme_customize_register($wp_customize)
 {
     $wp_customize->add_section('biji_setting', array(
-        'title' => '主题设置',
+        'title' => 'Theme Settings',
         'priority' => 101
     ));
 
@@ -140,7 +140,7 @@ function theme_customize_register($wp_customize)
         'type' => 'textarea'
     ));
     $wp_customize->add_control('biji_setting_footInfo', array(
-        'label' => '页脚追加JS代码',
+        'label' => 'Footer js',
         'section' => 'biji_setting',
         'type' => 'textarea'
     ));
