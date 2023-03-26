@@ -1,8 +1,8 @@
 <?php
 if (function_exists('register_nav_menus')) {
     register_nav_menus(array(
-        'header_nav' => __('站点导航'),
-        'social_nav' => __('社交链接')
+        'header_nav' => __('Nav Menus'),
+        'social_nav' => __('Social Links')
     ));
 }
 
