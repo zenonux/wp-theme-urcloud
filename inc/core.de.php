@@ -70,39 +70,26 @@ function theme_customize_register($wp_customize)
         'default' => '',
     ));
     $wp_customize->add_setting('biji_setting_placard', array(
-        'default' => '简单传递美好',
-    ));
-    $wp_customize->add_setting('biji_setting_beian', array(
-        'default' => '',
-    ));
-    $wp_customize->add_setting('biji_setting_cdn', array(
-        'default' => '',
+        'default' => 'Simple & Beauty',
     ));
     $wp_customize->add_setting('biji_setting_avatar', array(
-        'default' => '',
-    ));
-    $wp_customize->add_setting('biji_setting_exclude', array(
-        'default' => '',
-    ));
-    $wp_customize->add_setting('biji_setting_postAd', array(
         'default' => '',
     ));
     $wp_customize->add_setting('biji_setting_footInfo', array(
         'default' => '',
     ));
-
     $wp_customize->add_control('biji_setting_viewimage', array(
-        'label' => '关闭默认图片灯箱',
+        'label' => 'Off Lightbox',
         'section' => 'biji_setting',
         'type' => 'checkbox'
     ));
     $wp_customize->add_control('biji_setting_lately', array(
-        'label' => '关闭Timeago',
+        'label' => 'Off Timeago',
         'section' => 'biji_setting',
         'type' => 'checkbox'
     ));
     $wp_customize->add_control('ur_setting_website_start', array(
-        'label' => '网站建立时间',
+        'label' => 'Foundation Date',
         'section' => 'biji_setting',
         'type' => 'date'
     ));
@@ -115,32 +102,15 @@ function theme_customize_register($wp_customize)
         'section' => 'biji_setting',
     ));
     $wp_customize->add_control('biji_setting_placard', array(
-        'label' => '网站公告',
-        'section' => 'biji_setting'
-    ));
-    $wp_customize->add_control('biji_setting_beian', array(
-        'label' => '网站备案号',
-        'section' => 'biji_setting'
-    ));
-    $wp_customize->add_control('biji_setting_cdn', array(
-        'label' => '静态文件CDN',
+        'label' => 'Notice',
         'section' => 'biji_setting'
     ));
     $wp_customize->add_control('biji_setting_avatar', array(
-        'label' => 'Gravatar地址',
+        'label' => 'Gravatar',
         'section' => 'biji_setting'
-    ));
-    $wp_customize->add_control('biji_setting_exclude', array(
-        'label' => '首页过滤分类文章',
-        'section' => 'biji_setting'
-    ));
-    $wp_customize->add_control('biji_setting_postAd', array(
-        'label' => '文章结尾显示信息',
-        'section' => 'biji_setting',
-        'type' => 'textarea'
     ));
     $wp_customize->add_control('biji_setting_footInfo', array(
-        'label' => 'Footer js',
+        'label' => 'Inject Footer Javascript',
         'section' => 'biji_setting',
         'type' => 'textarea'
     ));
@@ -176,48 +146,8 @@ function biji_get_avatar($avatar)
 
 add_filter('get_avatar', 'biji_get_avatar', 10, 3);
 
-// 静态资源使用 CDN
-function Qiniu_cdn()
-{
-    ob_start('Qiniu_cdn_replace');
-}
 
-add_action('template_redirect', 'Qiniu_cdn');
-function Qiniu_cdn_replace($code)
-{
-    if (get_theme_mod('biji_setting_cdn')) {
-        $cdn_img = 'png|jpg|jpeg|gif';
-        $cdn_file = 'bmp|zip|rar|7z';
-        if (strstr($_SERVER['HTTP_ACCEPT'], 'image/webp')) $webp = '?imageView2/0/format/webp';
-        $cdn_dirs = str_replace('-', '\-', 'wp-content|wp-includes');
-        $code = preg_replace(cdn_regex($cdn_dirs, $cdn_img), '' . preg_replace('#^\w+://#', '//', get_theme_mod('biji_setting_cdn')) . '/$1' . $webp . '$4', $code);
-        $code = preg_replace(cdn_regex($cdn_dirs, $cdn_file), '' . preg_replace('#^\w+://#', '//', get_theme_mod('biji_setting_cdn')) . '/$1$4', $code);
-    }
-    return $code;
-}
 
-function cdn_regex($dirs, $type)
-{
-    return '/' . str_replace('/', '\/', preg_replace('#^\w+://#', '//', site_url())) . '\/((' . $dirs . ')\/[^\s\?\\\'\"\;\>\<]{1,}.(' . $type . '))([\"\\\'\s\?]{1})/';
-}
-
-// 首页过滤分类文章
-function exclude_category($query)
-{
-    $exclude_array = explode(",", get_theme_mod('biji_setting_exclude'));
-    $exclude = '';
-    foreach ($exclude_array as $k => $ex) {
-        if ($ex > 0) {
-            $ex *= -1;
-        }
-        $exclude .= $ex . ',';
-    }
-    if ($query->is_home() && $query->is_main_query()) {
-        $query->set('cat', $exclude);
-    }
-}
-
-add_action('pre_get_posts', 'exclude_category');
 
 // 缩略图技术 by：http://www.bgbk.org
 if (!defined('THEME_THUMBNAIL_PATH')) define('THEME_THUMBNAIL_PATH', '/cache/theme-thumbnail'); //存储目录
